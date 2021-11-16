@@ -1,0 +1,40 @@
+{% extends "management/base.html" %} 
+{% load static %} 
+
+{% block body %}
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>All Departments</h2>
+            <small class="text-muted">Welcome to Polyclinic</small>
+        </div>
+        <div class="row clearfix">
+            {% for department in departments %}
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="member-card verified">                            
+                            <div class="thumb-xl member-thumb">
+                                {% if department.profile %}
+                                <img src="{{department.profile.url}}" class="img-thumbnail rounded-circle" alt="profile-image">    
+                                {% else %}
+                                <img src="http://via.placeholder.com/130x130" class="img-fluid" alt="">   
+                                {% endif %}
+                            </div>
+
+                            <div class="">
+                                <h4 class="m-b-5 m-t-20">{{department.name}}</h4>
+                            </div>
+                            <a href="{% url 'management:department_doctors' department.name %}"  class="btn btn-raised btn-sm">View Doctors</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}
