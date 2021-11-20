@@ -219,9 +219,9 @@ Vous pouvez tester l'installation de Django en exécutant la commande suivante (
 Dans Windows, les scripts Python 3 sont exécutés en préfixant la commande avec py -3, bien que ceci puisse varier suivant votre installation. Essayer en enlevant le modificateur -3 si vous rencontrez un problème avec la commande. Dans Linux/macOS, la commande est python3.
 
 Attention : Le reste de ce module utilise les commandes Linux pour invoquer Python 3 (python3) . . Si vous travaillez sous Windows , remplacez simplement ce préfixe avec :
-    py -3
+        py -3
 
-Tester votre installation
+## Tester votre installation
 
 Les tests ci-dessus fonctionnent, mais ne font rien de très divertissant. Un test plus intéressant consiste à créer un projet squelette et de voir si il fonctionne. Pour ce faire, naviguez tout d'abord dans votre invite/terminal de commande à l'endroit où vous désirez stocker vos applications Django. Créez un dossier pour votre site test et placez-vous dedans.
 
