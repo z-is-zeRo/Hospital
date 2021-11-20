@@ -127,7 +127,7 @@ Ajoutez ensuite les lignes suivantes à la fin de votre fichier de configuration
 
 
 
-## Note : Les variables VIRTUALENVWRAPPER_PYTHON et VIRTUALENVWRAPPER_VIRTUALENV_ARGS pointent vers l'emplacement d'installation par défaut de Python3, et source /usr/local/bin/virtualenvwrapper.sh pointe vers l'emplacement par défaut du script virtualenvwrapper.sh. Si le virtualenv ne fonctionne pas quand vous le testez, vérifiez que Python et le script sont bien aux emplacements attendus (puis modifiez le fichier de configuration en conséquence).
+### Note : Les variables VIRTUALENVWRAPPER_PYTHON et VIRTUALENVWRAPPER_VIRTUALENV_ARGS pointent vers l'emplacement d'installation par défaut de Python3, et source /usr/local/bin/virtualenvwrapper.sh pointe vers l'emplacement par défaut du script virtualenvwrapper.sh. Si le virtualenv ne fonctionne pas quand vous le testez, vérifiez que Python et le script sont bien aux emplacements attendus (puis modifiez le fichier de configuration en conséquence).
 
 Vous pourrez trouver les bons emplacements de votre système en utilisant les commandes which virtualenvwrapper.sh et which python3.
 
@@ -151,7 +151,7 @@ Puis ajoutez les lignes suivantes à la fin de votre fichier de configuration sh
     export PROJECT_HOME=$HOME/Devel
     source /usr/local/bin/virtualenvwrapper.sh
     
-## Note : La variable VIRTUALENVWRAPPER_PYTHON pointe vers l'emplacement d'installation par défaut de Python3, et source /usr/local/bin/virtualenvwrapper.sh pointe vers l'emplacement par défaut du script virtualenvwrapper.sh. Si le virtualenv ne fonctionne pas quand vous le testez, vérifiez que Python et le script sont bien aux emplacements attendus (puis modifiez le fichier de configuration en conséquence).
+### Note : La variable VIRTUALENVWRAPPER_PYTHON pointe vers l'emplacement d'installation par défaut de Python3, et source /usr/local/bin/virtualenvwrapper.sh pointe vers l'emplacement par défaut du script virtualenvwrapper.sh. Si le virtualenv ne fonctionne pas quand vous le testez, vérifiez que Python et le script sont bien aux emplacements attendus (puis modifiez le fichier de configuration en conséquence).
 
 Par exemple, une installation test sur macOS a résulté en l'ajout des lignes suivantes dans le fichier startup :
 
