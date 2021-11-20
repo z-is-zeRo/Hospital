@@ -1,19 +1,19 @@
-#Hospital
+# Hospital
 
-#PRESENTATION
+# PRESENTATION
 
 dans le cadre d'un projet scolaire, nous avons dévellopé une application web  pour la gestion d'un hopital.
 
-#TECHNOLOGIE
+# TECHNOLOGIE
 
 pour le developpement nous avons utilisé python/Django.
 il s'agit donc ici d'un projet Django.
 
-#CREATION DE L'ENVIRONNELENT DE DEPLOIEMENT 
+# CREATION DE L'ENVIRONNELENT DE DEPLOIEMENT 
 
 il faut dans un premier temps créer un environnement virtuel pour le developpement de ce travail
 
-##Mettre en place un environnement de développement Django
+## Mettre en place un environnement de développement Django
 
 comment mettre en place et tester un environnement de développement Django sous Windows, Linux (Ubuntu) et macOS — Peu importe votre système d'exploitation, cet article devrait vous fournir de quoi commencer à développer des applications Django.
 
@@ -23,7 +23,7 @@ Aperçu de l'environnement de développement Django
 
 Django simplifie le processus de configuration de votre ordinateur pour que vous puissiez rapidement commencer à développer des applications web. Cette section explique ce que vous aurez dans l'environnement de développement, et vous fournit un aperçu de certaines options de configuration et d'installation. Le reste de l'article explique la méthode recommandée pour installer l'environnement de développement Django sur Ubuntu, macOS et Windows, et comment le tester.
 
-#Qu'est-ce que l'environnement de développement Django ?
+# Qu'est-ce que l'environnement de développement Django ?
 
 L'environnement de développement correspond à une installation de Django sur votre ordinateur local que vous pouvez utiliser pour développer et tester des applications Django avant de les déployer sur un environnement de production.
 
@@ -40,7 +40,7 @@ Django est extrêmement flexible sur sa manière d'être installé et configuré
 
 Chacune de ces options requiert une configuration et une installation légèrement différente. Les sous-sections ci-dessous vous expliquent différents choix. Dans le reste de l'article, nous vous montrerons comment installer Django sur un nombre restreint de systèmes d'exploitation, et nous supposerons que cette installation aura été suivie pour tout le reste du module.
 
-##Où peut-on télécharger Django ?
+## Où peut-on télécharger Django ?
 
 Il y a trois façons de télécharger Django :
 
@@ -51,22 +51,22 @@ Il y a trois façons de télécharger Django :
 
 Pour utiliser Django, vous devrez installer Python sur votre système d'exploitation. Si vous utilisez Python 3, vous aurez alors aussi besoin de l'outil Python Package Index — pip3 — qui est utilisé pour gérer (installer, mettre à jour, supprimer) les packages/librairies Python qui seront utilisés par Django et vos autres applications Python.
 
-#Ubuntu 18.04
+## Ubuntu 18.04
 
 Ubuntu Linux 18.04 LTS inclut par défaut Python 3.6.6. Vous pouvez vous en assurer en exécutant les commandes suivantes depuis le terminal bash :
-python3 -V
- Python 3.6.6
+    -python3 -V
+    -Python 3.6.6
 
 Toutefois, l'outil d'Index des Packages Python dont vous aurez besoin pour installer des packages avec Python 3 (y compris Django) n'est pas disponible par défaut. Vous pouvez installer pip3 avec le terminal bash avec :
 
-sudo apt install python3-pip
+    sudo apt install python3-pip
 
-#macOS
+## macOS
 
 macOS "El Capitan"et les versions plus récentes n'incluent pas Python 3. Vous pouvez vous en assurer en exécutant les commandes suivantes dans votre terminal bash :
 
-python3 -V
- -bash: python3ommand not found
+    python3 -V
+    bash: python3ommand not found
 
 Vous pouvez facilement installer Python 3 (ainsi que l'outil pip3) sur python.org:
 
@@ -77,14 +77,14 @@ Vous pouvez facilement installer Python 3 (ainsi que l'outil pip3) sur python.or
 
 Vous pouvez désormais confirmer la bonne installation en vérifiant votre version de Python 3 comme indiqué ci-dessous :
 
-python3 -V
- Python 3.7.2
+    python3 -V
+    Python 3.7.2
 
 Vous pouvez aussi vérifier que pip3 est correctement installé en listant les packages disponibles :
 
-pip3 list
+    pip3 list
 
-Windows 10
+## Windows 10
 
 Windows n'inclut pas Python par défaut, mais vous pouvez facilement l'installer (ainsi que l'outil pip3) sur python.org:
 
@@ -96,18 +96,16 @@ Windows n'inclut pas Python par défaut, mais vous pouvez facilement l'installer
 
 Vous pouvez ensuite vérifier que Python s'est correctement installé en tapant le texte suivant dans votre invite de commande :
 
-
-py -3 -V
-Python 3.7.2
+    py -3 -V
+    Python 3.7.2
 
 
 L'installeur Windows inclut pip3 (le gestionnaire de packages Python) par défaut. Vous pouvez lister les packages installés de la manière suivante :
 
+    pip3 list
 
-pip3 list
 
-
-##Utiliser Django dans un environnement virtuel Python
+## Utiliser Django dans un environnement virtuel Python
 
 Les librairies que nous utiliserons pour créer nos environnements virtuels seront virtualenvwrapper (Linux et macOS) et virtualenvwrapper-win (Windows), , qui à leur tour utilisent l'outil virtualenv (en-US). Les outils d'habillage permettent de créer une interface consistante pour gérer les interfaces sur toutes les plateformes.
 Installer l'utilitaire d'environnement virtuel
@@ -115,70 +113,78 @@ Mise en place de l'environnement virtuel sur Ubuntu
 
 Après avoir installé Python et pip vous pouvez installer virtualenvwrapper (qui inclut virtualenv). Le guide d'installation officiel peut être trouvé ici, ou bien vous pouvez suivre les instructions ci-dessous.
 
-##Installer l'outil en utilisant pip3:
+## Installer l'outil en utilisant pip3:
 
-sudo pip3 install virtualenvwrapper
+    sudo pip3 install virtualenvwrapper
 
 Ajoutez ensuite les lignes suivantes à la fin de votre fichier de configuration shell (le fichier caché .bashrc dans votre répertoire home). Elles indiquent les endroits où vos environnements virtuels seront installés, l'emplacement de vos projets de développement, et l'emplacement du script installé avec ce package :
 
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
+    export PROJECT_HOME=$HOME/Devel
+    source /usr/local/bin/virtualenvwrapper.sh
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
 
+
+## Note : Les variables VIRTUALENVWRAPPER_PYTHON et VIRTUALENVWRAPPER_VIRTUALENV_ARGS pointent vers l'emplacement d'installation par défaut de Python3, et source /usr/local/bin/virtualenvwrapper.sh pointe vers l'emplacement par défaut du script virtualenvwrapper.sh. Si le virtualenv ne fonctionne pas quand vous le testez, vérifiez que Python et le script sont bien aux emplacements attendus (puis modifiez le fichier de configuration en conséquence).
+
+Vous pourrez trouver les bons emplacements de votre système en utilisant les commandes which virtualenvwrapper.sh et which python3.
 
 Puis relancez le fichier de configuration en exécutant la commande suivante dans votre terminal :
 
-source ~/.bashrc
+    source ~/.bashrc
 
 Vous pouvez maintenant créer un nouvel environnement virtuel avec la commande mkvirtualenv.
 Mise en place de l'environnement virtuel sur macOS
 
 L'installation de virtualenvwrapper on sur macOS est quasiment identique à celle sur Ubuntu (une fois de plus, vous pouvez suivre les instructions du guide officiel d'installation ou suivre les indications ci-dessous).
 
-##Installez virtualenvwrapper (ainsi que virtualenv) en utilisant pip comme indiqué ci-dessous.
+## Installez virtualenvwrapper (ainsi que virtualenv) en utilisant pip comme indiqué ci-dessous.
 
-sudo pip3 install virtualenvwrapper
+    sudo pip3 install virtualenvwrapper
 
 Puis ajoutez les lignes suivantes à la fin de votre fichier de configuration shell.
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    export PROJECT_HOME=$HOME/Devel
+    source /usr/local/bin/virtualenvwrapper.sh
+    
+## Note : La variable VIRTUALENVWRAPPER_PYTHON pointe vers l'emplacement d'installation par défaut de Python3, et source /usr/local/bin/virtualenvwrapper.sh pointe vers l'emplacement par défaut du script virtualenvwrapper.sh. Si le virtualenv ne fonctionne pas quand vous le testez, vérifiez que Python et le script sont bien aux emplacements attendus (puis modifiez le fichier de configuration en conséquence).
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
-export PROJECT_HOME=$HOME/Devel
-source /Library/Frameworks/Python.framework/Versions/3.7/bin/virtualenvwrapper.sh
+Par exemple, une installation test sur macOS a résulté en l'ajout des lignes suivantes dans le fichier startup :
+
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
+    export PROJECT_HOME=$HOME/Devel
+    source /Library/Frameworks/Python.framework/Versions/3.7/bin/virtualenvwrapper.sh
 
 Vous pourrez trouver les bons emplacements de votre système en utilisant les commandes which virtualenvwrapper.sh et which python3.Puis relancez le fichier de configuration en appelant la ligne suivante depuis le terminal :
 
-source ~/.bash_profile
+    source ~/.bash_profile
 
 Vous devriez alors voir apparaître plusieurs lignes de script (les mêmes scripts que ceux présents dans l'installation Ubuntu). Vous devriez maintenant pouvoir créer un nouvel environnement virtuel avec la commande mkvirtualenv.
 Mise en place de l'environnement virtuel sur Windows 10
 
 Installer virtualenvwrapper-win est encore plus simple qu'installer virtualenvwrapper , parce que vous n'avez pas besoin de configurer là où l'outil enregistre les informations de l'environnement virtuel (il y a des valeurs par défaut). Tout ce que vous avez besoin de faire est de lancer la commande suivante depuis l'invite de commande :
 
-pip3 install virtualenvwrapper-win
+    pip3 install virtualenvwrapper-win
 
 Vous pouvez désormais créer un nouvel environnement virtuel avec la commande mkvirtualenv
 
-##Créer un environnement virtuel
+## Créer un environnement virtuel
 
 Maintenant que vous avez installé virtualenvwrapper ou virtualenvwrapper-win , travailler avec des environnements virtuels sera une tâche très similaire entre chaque plateforme.
 
 Vous pouvez désormais créer un nouvel environnement virtuel avec la commande mkvirtualenv. Lors de son exécution, vous pourrez voir l'environnement être configuré (ce que vous verrez changera légèrement en fonction de votre plateforme). Lorsque l'exécution de la commande sera terminée, votre environnement virtuel sera actif — vous pouvez voir au début de la ligne de commande le nom de votre environnement entre parenthèses (nous vous montrons le résultat pour Ubuntu ci-dessous, mais la dernière ligne est similaire su
 
-$ mkvirtualenv my_django_environment
+    $ mkvirtualenv my_django_environment
 
-Running virtualenv with interpreter /usr/bin/python3
-...
-virtualenvwrapper.user_scripts creating /home/ubuntu/.virtualenvs/t_env7/bin/get_env_details
-(my_django_environment) ubuntu@ubuntu:~$
+    Running virtualenv with interpreter /usr/bin/python3
+    ...
+    virtualenvwrapper.user_scripts creating /home/ubuntu/.virtualenvs/t_env7/bin/get_env_details
+    (my_django_environment) ubuntu@ubuntu:~$
 
 Maintenant que vous êtes dans votre environnement virtuel vous pouvez installer Django et commencer à développer.
 Utiliser un environnement virtuel
@@ -190,58 +196,61 @@ Il y a quelques commandes que vous devriez connaître (il y en a davantage dans 
     workon name_of_environment — Activer l'environnement virtuel spécifié
     rmvirtualenv name_of_environment — Supprimer l'environnement virtuel spécifié
 
-##Installer Django
+## Installer Django
 
 Une fois que vous avez créé votre environnement virtuel, et que vous avez utilisé workon pour y entrer, vous pouvez utiliser pip3 pour installer Django.
 
-pip3 install django
+    pip3 install django
 
 Vous pouvez tester l'installation de Django en exécutant la commande suivante (celle-ci ne fait que tester le fait que Python puisse trouver le module Django) :
 
-##Linux/macOS
-python3 -m django --version
- 2.1.5
+## Linux/macOS
+    python3 -m django --version
+    2.1.5
 
-##Windows
-py -3 -m django --version
- 2.1.5
+## Windows
+    py -3 -m django --version
+    2.1.5
 
-ote : Si la commande Windows ci-dessus n'indique aucun module Django présent, essayez :
+   note : Si la commande Windows ci-dessus n'indique aucun module Django présent, essayez :
 
-py -m django --version
+    py -m django --version
 
 Dans Windows, les scripts Python 3 sont exécutés en préfixant la commande avec py -3, bien que ceci puisse varier suivant votre installation. Essayer en enlevant le modificateur -3 si vous rencontrez un problème avec la commande. Dans Linux/macOS, la commande est python3.
 
-Attention : Le reste de ce module utilise les commandes Linux pour invoquer Python 3 (python3) . . Si vous travaillez sous Windows , remplacez simplement ce préfixe avec : py -3
+Attention : Le reste de ce module utilise les commandes Linux pour invoquer Python 3 (python3) . . Si vous travaillez sous Windows , remplacez simplement ce préfixe avec :
+    py -3
+
 Tester votre installation
 
 Les tests ci-dessus fonctionnent, mais ne font rien de très divertissant. Un test plus intéressant consiste à créer un projet squelette et de voir si il fonctionne. Pour ce faire, naviguez tout d'abord dans votre invite/terminal de commande à l'endroit où vous désirez stocker vos applications Django. Créez un dossier pour votre site test et placez-vous dedans.
 
-mkdir django_test
-cd django_test
+    mkdir django_test
+    cd django_test
 
 Vous pouvez ensuite créer un nouveau site squelette intitulé "mytestsite" utilisant l'outil django-admin omme montré. Après avoir créé le site, vous pouvez naviguer dans le dossier où vous trouverez le script principal pour gérer vos projets, intitulé manage.py.
 
-django-admin startproject mytestsite
+    django-admin startproject mytestsite
 
-cd mytestsite
+    cd mytestsite
 
 Nous pouvons lancer le serveur web de développement depuis ce dossier en utilisant manage.py et la commande runserver command, comme indiqué ci-dessous.
 
-$ python3 manage.py runserver
+    $ python3 manage.py runserver
 Performing system checks...
 
-#DEPLOIEMENT
+# DEPLOIEMENT
 
 une fois fois l'environnement virtuel crée, il faudra placer le projet dans le dossier hebergeant l'environnement crée, à partir de ce dossier ouvrir l'invite de commande.
-cela étant fait, entrer dans le dossier Hopital en invite de commande, ceci par la commande : cd hopital
+cela étant fait, entrer dans le dossier Hopital en invite de commande, ceci par la commande : 
+     cd hopital
  il ne reste plus qu'à installer quelques dépendances et à lancer le serveur:
  
- python manage.py makemigratiions
- pip install django-crispy-forms
- pip install django-allauth
- pip install pillow
- py manage.py runserver
+    python manage.py makemigratiions
+    pip install django-crispy-forms
+    pip install django-allauth
+    pip install pillow
+    py manage.py runserver
 
 
 
