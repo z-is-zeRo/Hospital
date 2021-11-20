@@ -1,4 +1,4 @@
-# Hospital
+#Hospital
 
 #PRESENTATION
 
@@ -40,7 +40,7 @@ Django est extrêmement flexible sur sa manière d'être installé et configuré
 
 Chacune de ces options requiert une configuration et une installation légèrement différente. Les sous-sections ci-dessous vous expliquent différents choix. Dans le reste de l'article, nous vous montrerons comment installer Django sur un nombre restreint de systèmes d'exploitation, et nous supposerons que cette installation aura été suivie pour tout le reste du module.
 
-## Où peut-on télécharger Django ?
+##Où peut-on télécharger Django ?
 
 Il y a trois façons de télécharger Django :
 
@@ -96,14 +96,18 @@ Windows n'inclut pas Python par défaut, mais vous pouvez facilement l'installer
 
 Vous pouvez ensuite vérifier que Python s'est correctement installé en tapant le texte suivant dans votre invite de commande :
 
+
 py -3 -V
- Python 3.7.2
+Python 3.7.2
+
 
 L'installeur Windows inclut pip3 (le gestionnaire de packages Python) par défaut. Vous pouvez lister les packages installés de la manière suivante :
 
+
 pip3 list
 
-Utiliser Django dans un environnement virtuel Python
+
+##Utiliser Django dans un environnement virtuel Python
 
 Les librairies que nous utiliserons pour créer nos environnements virtuels seront virtualenvwrapper (Linux et macOS) et virtualenvwrapper-win (Windows), , qui à leur tour utilisent l'outil virtualenv (en-US). Les outils d'habillage permettent de créer une interface consistante pour gérer les interfaces sur toutes les plateformes.
 Installer l'utilitaire d'environnement virtuel
@@ -111,17 +115,19 @@ Mise en place de l'environnement virtuel sur Ubuntu
 
 Après avoir installé Python et pip vous pouvez installer virtualenvwrapper (qui inclut virtualenv). Le guide d'installation officiel peut être trouvé ici, ou bien vous pouvez suivre les instructions ci-dessous.
 
-Installer l'outil en utilisant pip3:
+##Installer l'outil en utilisant pip3:
 
 sudo pip3 install virtualenvwrapper
 
 Ajoutez ensuite les lignes suivantes à la fin de votre fichier de configuration shell (le fichier caché .bashrc dans votre répertoire home). Elles indiquent les endroits où vos environnements virtuels seront installés, l'emplacement de vos projets de développement, et l'emplacement du script installé avec ce package :
+
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
+
 
 Puis relancez le fichier de configuration en exécutant la commande suivante dans votre terminal :
 
@@ -132,7 +138,7 @@ Mise en place de l'environnement virtuel sur macOS
 
 L'installation de virtualenvwrapper on sur macOS est quasiment identique à celle sur Ubuntu (une fois de plus, vous pouvez suivre les instructions du guide officiel d'installation ou suivre les indications ci-dessous).
 
-Installez virtualenvwrapper (ainsi que virtualenv) en utilisant pip comme indiqué ci-dessous.
+##Installez virtualenvwrapper (ainsi que virtualenv) en utilisant pip comme indiqué ci-dessous.
 
 sudo pip3 install virtualenvwrapper
 
@@ -192,11 +198,11 @@ pip3 install django
 
 Vous pouvez tester l'installation de Django en exécutant la commande suivante (celle-ci ne fait que tester le fait que Python puisse trouver le module Django) :
 
-# Linux/macOS
+##Linux/macOS
 python3 -m django --version
  2.1.5
 
-# Windows
+##Windows
 py -3 -m django --version
  2.1.5
 
@@ -225,11 +231,12 @@ Nous pouvons lancer le serveur web de développement depuis ce dossier en utilis
 $ python3 manage.py runserver
 Performing system checks...
 
-# DEPLOIEMENT
+#DEPLOIEMENT
 
 une fois fois l'environnement virtuel crée, il faudra placer le projet dans le dossier hebergeant l'environnement crée, à partir de ce dossier ouvrir l'invite de commande.
 cela étant fait, entrer dans le dossier Hopital en invite de commande, ceci par la commande : cd hopital
  il ne reste plus qu'à installer quelques dépendances et à lancer le serveur:
+ 
  python manage.py makemigratiions
  pip install django-crispy-forms
  pip install django-allauth
